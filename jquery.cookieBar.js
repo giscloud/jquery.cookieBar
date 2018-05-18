@@ -48,7 +48,8 @@
 			'hideOnClose': true,
 			'secure': false,
 			'path': '/',
-			'domain': ''
+			'domain': '',
+			'expires': 30
 		}, options);
 
 		return this.each(function () {
@@ -71,7 +72,7 @@
 				if (settings.hideOnClose) {
 					cookiebar.hide();
 				}
-				$.cookie('cookiebar', 'hide', { path: settings.path, secure: settings.secure, domain: settings.domain, expires: 30 });
+				$.cookie('cookiebar', 'hide', { path: settings.path, secure: settings.secure, domain: settings.domain, expires: settings.expires });
 				cookiebar.trigger('cookieBar-close');
 				return false;
 			});
